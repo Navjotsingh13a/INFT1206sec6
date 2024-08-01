@@ -1,14 +1,13 @@
 // setup canvas
 
+const para = document.querySelector('p');
+let count = 0;
+
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
-
-// Paragraph Element for displaying the ball count.
-const para = document.querySelector('p');
-let count = 0;
 
 // function to generate random number
 
@@ -23,7 +22,6 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-// Shape class for balls.
 class Shape {
 
   constructor(x, y, velX, velY) {
@@ -35,7 +33,6 @@ class Shape {
 
 }
 
-// Ball class getting from shapes.
 class Ball extends Shape {
 
   constructor(x, y, velX, velY, color, size) {
@@ -91,7 +88,6 @@ class Ball extends Shape {
 
 }
 
-// EvilCircle Class getting from shape.
 class EvilCircle extends Shape {
 
   constructor(x, y) {
@@ -162,7 +158,6 @@ class EvilCircle extends Shape {
 
 }
 
-
 const balls = [];
 
 while (balls.length < 25) {
@@ -196,7 +191,6 @@ function loop() {
     }
   }
 
-  // Draw and Update EvilBall  
   evilBall.draw();
   evilBall.checkBounds();
   evilBall.collisionDetect();
